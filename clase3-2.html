@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <button id="mi-boton" onclick="deshabilitarBoton(event)">Haz click</button>
+    <button id="mi-boton" onclick="deshabilitarBoton(event)">Haz click2</button>
+
+    <button id="mi-boton" data-value="Samy" onclick="seleccionarNombre(event)">seleccionar a samy</button>
+    <button id="mi-boton" data-value="tomy" onclick="seleccionarNombre(event)">seleccionar a tomy </button>
+
+    <div class="output"></div>
+
+    <script>
+        var boton = document.querySelector('#mi-boton')
+
+        function deshabilitarBoton(event) {
+         event.target.disable = true
+        }
+
+
+        function seleccionarNombre(event) {
+            var boton = event.target
+            var valor = boton.dataset.value
+            var output = document.querySelector('.output')
+            output.innerHTML = ` ${valor}`
+        }
+    </script>
+</body>
+
+</html>
